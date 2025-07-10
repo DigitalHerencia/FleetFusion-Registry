@@ -1,7 +1,7 @@
 import * as React from "react"
 import { cva, type VariantProps } from "class-variance-authority"
 
-import { cn } from "@/registry/fleetfusion-dark/lib/utils"
+import { cn } from "@/lib/utils"
 
 const badgeVariants = cva(
   "inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2",
@@ -15,17 +15,6 @@ const badgeVariants = cva(
         destructive:
           "border-transparent bg-destructive text-destructive-foreground hover:bg-destructive/80",
         outline: "text-foreground",
-        // Fleet-specific status variants
-        success:
-          "border-transparent bg-fleet-success text-white hover:bg-fleet-success/80",
-        warning:
-          "border-transparent bg-fleet-warning text-black hover:bg-fleet-warning/80",
-        danger:
-          "border-transparent bg-fleet-danger text-white hover:bg-fleet-danger/80",
-        info:
-          "border-transparent bg-fleet-info text-white hover:bg-fleet-info/80",
-        neutral:
-          "border-transparent bg-fleet-neutral text-white hover:bg-fleet-neutral/80",
       },
     },
     defaultVariants: {

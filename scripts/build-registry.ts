@@ -1,6 +1,5 @@
 import { promises as fs } from 'fs'
 import { join } from 'path'
-import { execSync } from 'child_process'
 
 interface RegistryItem {
   name: string
