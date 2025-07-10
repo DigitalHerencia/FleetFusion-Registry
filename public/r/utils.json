@@ -1,0 +1,18 @@
+{
+  "name": "utils",
+  "type": "registry:lib",
+  "title": "Utility Functions",
+  "description": "Shared utility functions (classnames merger, helpers)",
+  "dependencies": [
+    "clsx",
+    "tailwind-merge"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/fleetfusion-dark/lib/utils.ts",
+      "type": "registry:lib",
+      "content": "import { type ClassValue, clsx } from \"clsx\"\nimport { twMerge } from \"tailwind-merge\"\n\n/**\n * cn: Merge and conditionally join classNames.\n * Uses clsx for conditional logic and tailwind-merge to avoid duplicate Tailwind classes.\n * \n * @param inputs - Class names to merge\n * @returns Merged class names string\n */\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs))\n}\n\n/**\n * Format currency for fleet management displays\n * @param amount - The amount to format\n * @param currency - The currency code (default: USD)\n * @returns Formatted currency string\n */\nexport function formatCurrency(amount: number, currency: string = 'USD'): string {\n  return new Intl.NumberFormat('en-US', {\n    style: 'currency',\n    currency: currency,\n  }).format(amount)\n}\n\n/**\n * Format distance for fleet management displays\n * @param distance - Distance in miles\n * @param unit - Unit to display (default: 'mi')\n * @returns Formatted distance string\n */\nexport function formatDistance(distance: number, unit: string = 'mi'): string {\n  return new Intl.NumberFormat('en-US', {\n    minimumFractionDigits: 0,\n    maximumFractionDigits: 1,\n  }).format(distance) + ' ' + unit\n}\n\n/**\n * Generate initials from a name\n * @param name - Full name\n * @returns Initials string\n */\nexport function getInitials(name: string): string {\n  return name\n    .split(' ')\n    .map(word => word.charAt(0))\n    .join('')\n    .toUpperCase()\n    .slice(0, 2)\n}"
+    }
+  ]
+}
